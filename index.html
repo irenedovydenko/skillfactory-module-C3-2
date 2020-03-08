@@ -1,0 +1,87 @@
+<div class="container-fluid"> 
+  <form>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check1">
+    <label class="form-check-label" for="check1">
+      Не звонить мне
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check2">
+    <label class="form-check-label" for="check2">
+      я прочитал и согласен с правилами пользования сервисом
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check3">
+    <label class="form-check-label" for="check3">
+      я не выбираю эту галочку
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check4">
+    <label class="form-check-label" for="check4">
+      я подтверждаю, что свобода в интернете — это возможность выбирать галочки
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check5">
+    <label class="form-check-label" for="check5">
+      мне больше 12 лет
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check6">
+    <label class="form-check-label" for="check6">
+      это задание выполнено правильно
+    </label>
+  </div>
+
+  <input type="button" id="Button1" value="Save" onclick="save()"/>
+  
+  <script>
+  function save(){
+  var checkbox = document.getElementById('check1');
+  localStorage.setItem('check1', checkbox.checked);
+  var checkbox = document.getElementById('check2');
+  localStorage.setItem('check2', checkbox.checked);
+  var checkbox = document.getElementById('check3');
+  localStorage.setItem('check3', checkbox.checked);
+  var checkbox = document.getElementById('check4');
+  localStorage.setItem('check4', checkbox.checked);
+  var checkbox = document.getElementById('check5');
+  localStorage.setItem('check5', checkbox.checked);
+  var checkbox = document.getElementById('check6');
+  localStorage.setItem('check6', checkbox.checked);
+}
+
+function load(){    
+  var checked = JSON.parse(localStorage.getItem('check1'));
+  document.getElementById("check1").checked = checked;
+  var checked = JSON.parse(localStorage.getItem('check2'));
+  document.getElementById("check2").checked = checked;
+  var checked = JSON.parse(localStorage.getItem('check3'));
+  document.getElementById("check3").checked = checked;
+  var checked = JSON.parse(localStorage.getItem('check4'));
+  document.getElementById("check4").checked = checked;
+  var checked = JSON.parse(localStorage.getItem('check5'));
+  document.getElementById("check5").checked = checked;
+  var checked = JSON.parse(localStorage.getItem('check6'));
+  document.getElementById("check6").checked = checked;
+}
+
+function wis(){
+  location.reload();
+  localStorage.clear()
+
+}
+
+load();
+
+</script>
